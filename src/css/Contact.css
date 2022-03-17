@@ -1,0 +1,30 @@
+.contact {
+  /* background-color: yellow; */
+  /* background-color: var(--background-color); */
+  color: var(--primary);
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 4rem 0;
+  }
+}
+
+.contact .header {
+  font-size: 1.5rem;
+  margin-top: 10rem;
+}
+
+.contact .iconRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 2rem 2rem;
+  width: 100%;
+}

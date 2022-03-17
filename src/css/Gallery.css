@@ -1,0 +1,29 @@
+.gallery {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.gallery .activeImage {
+  
+  max-width: 70vw;
+  height: auto;
+  max-height: 70vh;
+}
+
+.gallery .control {
+min-width: 10vw;
+display: flex;
+  }
+
+  .alignEnd {
+    align-items: center;
+    justify-content: end;
+  }
+  .alignStart {
+    align-items: center;
+    justify-content: end;
+  }

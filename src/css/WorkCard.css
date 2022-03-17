@@ -1,0 +1,131 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  height: 40rem;
+  width: 25rem;
+  border: 0.2rem solid #fff;
+  border-radius: 0.5rem;
+  margin: 2rem;
+  box-shadow: 0 0 0rem #fff, 0 0 0rem #fff, 0 0 1rem var(--primary), 0 0 0.8rem var(--primary), 0 0 0.1rem var(--primary), inset 0 0 1rem var(--primary);
+  overflow: hidden;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1rem var(--primary), 0 0 2rem var(--primary), inset 0 0 1.3rem var(--primary);
+
+  animation: neonGlow 1s ease-in-out infinite alternate;
+  -webkit-animation: neonGlow 1s ease-in-out infinite alternate;
+  -moz-animation: neonGlow 1s ease-in-out infinite alternate;
+}
+
+.card .mediaContainer {
+  height: 18rem;
+  width: 100%;
+  background-image: url('../images/project1.webp');
+  background-position: center;
+  background-size: cover;
+}
+
+.card .iconRow {
+  display: flex;
+  margin-top: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  height: 3rem;
+  width: 100%;
+  /* background-color: yellow; */
+}
+
+.card .detailContainer {
+  height: auto;
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card .detailContainer p {
+  margin-bottom: 2rem;
+}
+
+/* Underline styles */
+a {
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Fade in */
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: hotpink;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+a:hover::after,
+a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Scale from center */
+a::after {
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+a:hover::after,
+a:focus::after {
+  transform: scale(1);
+}
+
+/*glow*/
+
+@keyframes neonGlow {
+  from {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1.1rem var(--primary), 0 0 1.2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+  to {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1rem var(--primary), 0 0 2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+}
+
+/* mozilla*/
+
+@-moz-keyframes neonGlow {
+  from {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 0.8rem var(--primary), 0 0 1.2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+  to {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1rem var(--primary), 0 0 2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+}
+
+/*webkit*/
+
+@-webkit-keyframes neonGlow {
+  from {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 0.8rem var(--primary), 0 0 1.2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+  to {
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1rem var(--primary), 0 0 2rem var(--primary), inset 0 0 1.3rem var(--primary);
+  }
+}

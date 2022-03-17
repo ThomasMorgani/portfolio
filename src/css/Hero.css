@@ -1,0 +1,279 @@
+.light {
+  position: relative;
+  background-color: var(--background-color);
+  padding: 25px 30px;
+  color: var(--primary);
+  font-size: 24px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  height: 5rem;
+  width: 15rem;
+  border: 0.1rem solid #fff;
+  border-radius: 0.5rem;
+  /* background-color: var(--primary); */
+  /* color: #050801; */
+  opacity: 0;
+  box-shadow: 0 0 5px var(--primary), 0 0 5px var(--primary), 0 0 5px var(--primary), 0 0 200px var(--primary);
+  animation: flip-in 1s linear forwards 3s;
+}
+
+@keyframes flip-in {
+  from {
+    transform: rotateX(-90deg);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: rotateX(-45deg);
+    transform-origin: 100% 2.5rem; /* half of height */
+    opacity: 0.5;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+.light:hover {
+  background-color: var(--primary);
+  color: #050801;
+  box-shadow: 0 0 5px var(--primary), 0 0 25px var(--primary), 0 0 50px var(--primary), 0 0 200px var(--primary);
+}
+.light div {
+  position: absolute;
+}
+.light div:nth-child(1) {
+  width: 100%;
+  height: 3.5px;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(to right, transparent, #3385c2);
+  animation: animate1 3s linear infinite 3s;
+}
+.light div:nth-child(2) {
+  width: 3.5px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(to bottom, transparent, #3385c2);
+  animation: animate2 3s linear infinite 3s;
+  animation-delay: 0.25s;
+}
+.light div:nth-child(3) {
+  width: 100%;
+  height: 3.5px;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(to left, transparent, #3385c2);
+  animation: animate3 3s linear infinite 3s;
+  animation-delay: 0.5s;
+}
+.light div:nth-child(4) {
+  width: 3.5px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(to top, transparent, #3385c2);
+  animation: animate4 3s linear infinite 3s;
+  animation-delay: 0.75s;
+}
+
+.hero {
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  width: 100vw;
+}
+
+.first_name {
+  position: absolute;
+  left: 50vw;
+  top: 0;
+  animation: first_name_intro forwards 2s;
+  transform: translate(-50%);
+  font-size: 1em;
+}
+.last_name {
+  position: absolute;
+  left: 50vw;
+  top: 30vh;
+  font-size: 0em;
+  z-index: 19;
+  transform: translate(-50%);
+  animation: last_name_intro forwards linear 3s 1s;
+}
+
+.section-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  /* background-color: red; */
+}
+
+.link-cta {
+  color: var(--primary);
+  background-color: var(--background-color);
+  border: 0.1rem solid #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0rem #fff, 0 0 0rem #fff, 0 0 1rem var(--primary), 0 0 0.8rem var(--primary), 0 0 0.1rem var(--primary), inset 0 0 1rem var(--primary);
+  overflow: hidden;
+  -webkit-transition: all 0.25s;
+  -moz-transition: all 0.25s;
+  transition: all 0.25s;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2em;
+  width: 15em;
+}
+
+.link-cta:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--primary), 0 0 1rem var(--primary), 0 0 2rem var(--primary), inset 0 0 1.3rem var(--primary);
+
+  animation: neonGlow 1s ease-in-out infinite alternate;
+  -webkit-animation: neonGlow 1s ease-in-out infinite alternate;
+  -moz-animation: neonGlow 1s ease-in-out infinite alternate;
+}
+
+.section-cta :nth-child(2) {
+  color: var(--primary);
+  background-color: var(--background-color);
+  border: 0.025rem solid #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px var(--primary), 0 0 25px var(--primary), 0 0 50px var(--primary), 0 0 200px var(--primary);
+}
+
+.metal {
+  background: linear-gradient(
+    hsl(239, 50%, 30%) 15%,
+    hsl(239, 50%, 40%) 25%,
+    hsl(200, 60%, 50%) 35%,
+    hsl(100, 70%, 80%) 45%,
+    hsl(60, 100%, 98%) 50%,
+    hsl(240, 0%, 0%) 52%,
+    hsl(240, 10%, 10%) 60%,
+    hsl(240, 50%, 30%) 70%,
+    hsl(220, 70%, 60%) 80%,
+    hsl(212, 92%, 76%) 85%
+  );
+  -webkit-text-stroke: 2px hsl(200, 65%, 80%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.raise {
+  filter: drop-shadow(1px 3px 0px hsl(242, 54%, 10%)) drop-shadow(1px 3px 0px hsl(242, 54%, 15%)) drop-shadow(1px 3px 0px hsl(242, 54%, 20%))
+    drop-shadow(1px 3px 0px hsl(242, 54%, 25%)) drop-shadow(1px 3px 0px hsl(242, 54%, 30%)) drop-shadow(0px 0px 10px rgba(16, 16, 16, 0.4));
+}
+
+@keyframes first_name_intro {
+  from {
+  }
+
+  to {
+    left: 50vw;
+    top: 15vh;
+    font-size: 10em;
+    transform: translate(-50%);
+  }
+}
+@keyframes last_name_intro {
+  from {
+    font-size: 0;
+    display: none;
+  }
+
+  10% {
+    display: block;
+    top: 39vh;
+    font-size: 0.5em;
+  }
+  20% {
+    top: 38vh;
+    font-size: 2em;
+  }
+  30% {
+    top: 37vh;
+    font-size: 3em;
+  }
+  40% {
+    top: 36vh;
+    font-size: 4em;
+  }
+  50% {
+    top: 35vh;
+    font-size: 5em;
+  }
+  60% {
+    top: 34vh;
+    font-size: 6em;
+  }
+  70% {
+    top: 33vh;
+    font-size: 7em;
+  }
+  80% {
+    top: 32vh;
+    font-size: 8em;
+  }
+  90% {
+    top: 31vh;
+    font-size: 9em;
+  }
+
+  to {
+    display: block;
+    top: 30vh;
+    font-size: 10em;
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}

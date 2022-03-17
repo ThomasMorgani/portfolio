@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Hero from './components/Hero'
+import Modal from './components/Modal'
+import Works from './components/Works'
+import tempItems from './data.js'
 
+import './css/App.css'
+
+// export const AppContext = createContext()
 function App() {
+  const modal = {
+    isOpen: false,
+  }
+  const work = { items: tempItems, selected: null }
+  const [appState, setState] = useState({ modal, work })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Hero></Hero>
+      <Works {...{ appState, setState }}></Works>
+      <Modal {...{ appState, setState }}></Modal>
+      {/*  PROJECTS */}
+      {/*  CONTACT*/}
+      {/* LINKS */}
+    </>
+  )
 }
 
-export default App;
+export default App
